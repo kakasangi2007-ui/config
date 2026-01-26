@@ -56,12 +56,14 @@ def fetch_channel(url):
     soup = BeautifulSoup(r.text, "html.parser")
     posts = soup.select("div.tgme_widget_message")
     messages = []
+
     for p in posts:
         mid = p.get("data-post")
         if not mid:
             continue
         text = p.get_text("\n", strip=True)
         messages.append((mid, text))
+
     return messages  # جدید → قدیم
 
 # ---------- Extract ----------
@@ -132,21 +134,22 @@ def rename_config(cfg):
 def build_messages(configs):
     now = datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
     messages = []
-    cur = HEADER + "<code>"
+
+    cur = HEADER + "<blockquote><code>"
 
     for cfg in configs:
         cfg = rename_config(cfg)
         piece = cfg + "\n"
 
-        if len(cur) + len(piece) + len("</code>") + len(footer(now)) > MAX_LEN:
-            cur = cur.rstrip("\n") + "</code>" + footer(now)
+        if len(cur) + len(piece) + len("</code></blockquote>") + len(footer(now)) > MAX_LEN:
+            cur = cur.rstrip("\n") + "</code></blockquote>" + footer(now)
             messages.append(cur)
-            cur = HEADER + "<code>" + piece
+            cur = HEADER + "<blockquote><code>" + piece
         else:
             cur += piece
 
-    if cur.strip() != HEADER.strip() + "<code>":
-        cur = cur.rstrip("\n") + "</code>" + footer(now)
+    if cur.strip() != HEADER.strip() + "<blockquote><code>":
+        cur = cur.rstrip("\n") + "</code></blockquote>" + footer(now)
         messages.append(cur)
 
     return messages
