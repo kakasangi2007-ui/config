@@ -2,8 +2,8 @@ name: Run Telegram Config Bot
 
 on:
   schedule:
-    # هر ۳ ساعت یک‌بار
-    - cron: '0 */3 * * *'
+    # هر 1 ساعت یک‌بار
+    - cron: '0 */1 * * *'
   workflow_dispatch:
 
 jobs:
