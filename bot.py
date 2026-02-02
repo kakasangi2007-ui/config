@@ -19,24 +19,28 @@ SOURCES = [
 
 STATE_FILE = "last_messages.json"
 MAX_LEN = 3800
-CONFIG_NAME = "اتصال پایدار | configs_freeiran"
+
+CONFIG_NAME = "ConfigV2Ray_Free"
+CHANNEL_USERNAME = "@ConfigV2Ray_Free"
+
+HASHTAGS = "\n#config\n#v2ray"
 # ===========================================
 
+
+# ---------- Message Template ----------
 HEADER = (
-    "╔════════════════════╗\n"
-    "🔥 CONFIG DROP 🔥\n"
-    "╚════════════════════╝\n\n"
-    "🛡 کانفیگ‌های پایدار و امن\n"
-    "⚡ کپی با یک کلیک\n\n"
+    "کانفیگ امروز V2Ray\n"
+    "سازگار با اندروید و ویندوز\n"
+    "تست‌شده | پایدار\n\n"
 )
 
-def footer(ts):
+def footer(ts: str) -> str:
     return (
-        "\n\n╔════════════════════╗\n"
-        f"⏱ {ts}\n"
-        "📡 @configs_freeiran\n"
-        "╚════════════════════╝"
+        f"\n—\n"
+        f"{CHANNEL_USERNAME}\n"
+        f"⏱ {ts}"
     )
+
 
 # ---------- State ----------
 def load_state():
@@ -49,14 +53,16 @@ def save_state(state):
     with open(STATE_FILE, "w", encoding="utf-8") as f:
         json.dump(state, f, ensure_ascii=False)
 
+
 # ---------- Fetch ----------
 def fetch_channel(url):
     r = requests.get(url, timeout=20)
     r.raise_for_status()
+
     soup = BeautifulSoup(r.text, "html.parser")
     posts = soup.select("div.tgme_widget_message")
-    messages = []
 
+    messages = []
     for p in posts:
         mid = p.get("data-post")
         if not mid:
@@ -64,12 +70,14 @@ def fetch_channel(url):
         text = p.get_text("\n", strip=True)
         messages.append((mid, text))
 
-    return messages  # جدید → قدیم
+    return messages  # newest → oldest
+
 
 # ---------- Extract ----------
 def extract_configs(text):
     pattern = r'(vmess://[^\s]+|vless://[^\s]+|trojan://[^\s]+|ss://[^\s]+|ssr://[^\s]+)'
     return re.findall(pattern, text)
+
 
 # ---------- Validate ----------
 def is_valid_vmess(cfg):
@@ -83,7 +91,7 @@ def is_valid_vmess(cfg):
 def is_valid_link(cfg):
     try:
         p = urlparse(cfg)
-        return p.hostname is not None and p.port is not None
+        return p.hostname and p.port
     except:
         return False
 
@@ -98,11 +106,12 @@ def is_valid_ss(cfg):
 def is_config_valid(cfg):
     if cfg.startswith("vmess://"):
         return is_valid_vmess(cfg)
-    elif cfg.startswith(("vless://", "trojan://")):
+    if cfg.startswith(("vless://", "trojan://")):
         return is_valid_link(cfg)
-    elif cfg.startswith(("ss://", "ssr://")):
+    if cfg.startswith(("ss://", "ssr://")):
         return is_valid_ss(cfg)
     return False
+
 
 # ---------- Rename ----------
 def rename_vmess(cfg, name):
@@ -127,8 +136,8 @@ def rename_by_fragment(cfg, name):
 def rename_config(cfg):
     if cfg.startswith("vmess://"):
         return rename_vmess(cfg, CONFIG_NAME)
-    else:
-        return rename_by_fragment(cfg, CONFIG_NAME)
+    return rename_by_fragment(cfg, CONFIG_NAME)
+
 
 # ---------- Build Messages ----------
 def build_messages(configs):
@@ -136,23 +145,30 @@ def build_messages(configs):
     messages = []
 
     cur = HEADER + "<blockquote><code>"
+    msg_count = 0
 
     for cfg in configs:
         cfg = rename_config(cfg)
         piece = cfg + "\n"
 
         if len(cur) + len(piece) + len("</code></blockquote>") + len(footer(now)) > MAX_LEN:
-            cur = cur.rstrip("\n") + "</code></blockquote>" + footer(now)
+            msg_count += 1
+            tag = HASHTAGS if msg_count % 3 == 0 else ""
+
+            cur = cur.rstrip("\n") + "</code></blockquote>" + tag + footer(now)
             messages.append(cur)
             cur = HEADER + "<blockquote><code>" + piece
         else:
             cur += piece
 
-    if cur.strip() != HEADER.strip() + "<blockquote><code>":
-        cur = cur.rstrip("\n") + "</code></blockquote>" + footer(now)
+    if cur.strip():
+        msg_count += 1
+        tag = HASHTAGS if msg_count % 3 == 0 else ""
+        cur = cur.rstrip("\n") + "</code></blockquote>" + tag + footer(now)
         messages.append(cur)
 
     return messages
+
 
 # ---------- Main ----------
 async def main():
@@ -161,38 +177,36 @@ async def main():
     all_new_configs = []
 
     for src in SOURCES:
-        last = state.get(src)
-        msgs = fetch_channel(src)
+        last_id = state.get(src)
+        posts = fetch_channel(src)
 
-        for mid, text in msgs:
-            if last and mid <= last:
+        for mid, text in posts:
+            if last_id and mid <= last_id:
                 break
-
             for cfg in extract_configs(text):
                 if is_config_valid(cfg):
                     all_new_configs.append(cfg)
 
-        if msgs:
-            state[src] = msgs[0][0]
+        if posts:
+            state[src] = posts[0][0]
 
     if not all_new_configs:
-        print("📭 پیام جدیدی نیست")
         save_state(state)
         return
 
     messages = build_messages(all_new_configs)
 
-    for m in messages:
+    for msg in messages:
         await bot.send_message(
             chat_id=TARGET_CHAT,
-            text=m,
+            text=msg,
             parse_mode=ParseMode.HTML,
             disable_web_page_preview=True
         )
         await asyncio.sleep(1)
 
     save_state(state)
-    print(f"✅ ارسال شد | تعداد پیام: {len(messages)}")
+
 
 if __name__ == "__main__":
     asyncio.run(main())
