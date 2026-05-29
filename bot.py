@@ -9,12 +9,9 @@ from urllib.parse import urlparse, urlunparse, quote
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 TARGET_CHAT = os.getenv("TARGET_CHAT")
 
+# فقط همین یک کانال
 SOURCES = [
-    "https://t.me/s/BestProxyTel1",
-    "https://t.me/s/ch_v2ryng_support",
-    "https://t.me/s/Proxymelimon",
-    "https://t.me/s/nitruStore",
-    "https://t.me/s/NETMelliAnti",
+    "https://t.me/s/ConfigsHUB2",
 ]
 
 STATE_FILE = "last_messages.json"
@@ -24,6 +21,9 @@ CONFIG_NAME = "ConfigV2Ray_Free"
 CHANNEL_USERNAME = "@ConfigV2Ray_Free"
 
 HASHTAGS = "\n#config\n#v2ray"
+
+# محدودیت تعداد کانفیگ در هر اجرا
+MAX_CONFIGS_PER_RUN = 10
 # ===========================================
 
 
@@ -193,6 +193,9 @@ async def main():
     if not all_new_configs:
         save_state(state)
         return
+
+    # فقط 10 تا کانفیگ اول (آخرین پیام‌ها) را بردار
+    all_new_configs = all_new_configs[:MAX_CONFIGS_PER_RUN]
 
     messages = build_messages(all_new_configs)
 
