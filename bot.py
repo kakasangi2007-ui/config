@@ -9,7 +9,6 @@ from urllib.parse import urlparse, urlunparse, quote
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 TARGET_CHAT = os.getenv("TARGET_CHAT")
 
-# فقط همین یک کانال
 SOURCES = [
     "https://t.me/s/ConfigsHUB2",
 ]
@@ -22,7 +21,6 @@ CHANNEL_USERNAME = "@ConfigV2Ray_Free"
 
 HASHTAGS = "\n#config\n#v2ray"
 
-# محدودیت تعداد کانفیگ در هر اجرا
 MAX_CONFIGS_PER_RUN = 10
 # ===========================================
 
@@ -70,7 +68,7 @@ def fetch_channel(url):
         text = p.get_text("\n", strip=True)
         messages.append((mid, text))
 
-    return messages  # newest → oldest
+    return messages
 
 
 # ---------- Extract ----------
@@ -194,10 +192,18 @@ async def main():
         save_state(state)
         return
 
-    # فقط 10 تا کانفیگ اول (آخرین پیام‌ها) را بردار
-    all_new_configs = all_new_configs[:MAX_CONFIGS_PER_RUN]
+    # حذف کانفیگ‌های تکراری
+    seen = set()
+    unique_configs = []
+    for cfg in all_new_configs:
+        if cfg not in seen:
+            seen.add(cfg)
+            unique_configs.append(cfg)
 
-    messages = build_messages(all_new_configs)
+    # فقط 10 تا آخر (جدیدترین کانفیگ‌ها)
+    unique_configs = unique_configs[-MAX_CONFIGS_PER_RUN:]
+
+    messages = build_messages(unique_configs)
 
     for msg in messages:
         await bot.send_message(
