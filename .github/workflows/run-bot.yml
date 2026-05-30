@@ -2,9 +2,10 @@ name: Run Telegram Config Bot
 
 on:
   schedule:
-    # هر 1 ساعت یک‌بار
-    - cron: '0 */1 * * *'
-  workflow_dispatch:
+    - cron: '0 */1 * * *'     # هر ۱ ساعت (به عنوان پشتیبان)
+  workflow_dispatch:           # 🔑 این خط را اضافه کنید
+  repository_dispatch:
+    types: [run-bot]
 
 jobs:
   run-bot:
@@ -40,4 +41,3 @@ jobs:
             git commit -m "update state" || echo "No changes to commit"
             git push
           fi
-
