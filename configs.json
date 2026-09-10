@@ -15,7 +15,7 @@
   "vless://274c4cab-c0f8-441c-bfc8-25ade14fe71b@de9.bexait.ir:2434?encryption=none&security=reality&type=tcp&headerType=none&sni=icloud.com&fp=chrome&pbk=yzCvRpbQ-cRePaJAuQkw42_xEf-R860gFsQwoPki2E0&sid=9de041877612a718#[",
   "vless://12aa4a28-ef6a-49f2-9e16-4ad8fc34a6af@nsjwiwueijeneeiejdndn.neninet.ir:42813?security=&encryption=mlkem768x25519plus.native.0rtt.Gu-KSpH9m5bbaKh-CvzzJVA2sMSXuuYYiLL5Q85Rx3o&headerType=http&type=tcp#[",
   "vless://274c4cab-c0f8-441c-bfc8-25ade14fe71b@199.232.78.159:443?encryption=none&security=tls&type=ws&headerType=none&path=%2F&host=FastSvn.global.ssl.fastly.net&sni=ssl.fastly.com&fp=chrome#[",
-  null,
+  "vless://1f6531a1-a6eb-4274-9f51-4a0899456fcf@195.254.165.243:443?security=reality&encryption=none&pbk=zSjG6wndmLAzE8ykCBXpAm2eh0viWVSy3gt2juXF4EE&headerType=none&fp=chrome&spx=%2FgiyWVcXDg48T294&type=tcp&flow=xtls-rprx-vision&sni=play.google.com&sid=eaa8#[",
   null,
   null,
   null,
