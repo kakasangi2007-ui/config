@@ -1,6 +1,4 @@
 [
-  "vless://f0e0d780-a43b-98ef-d7fe-f628cfb1a606@130.49.77.8:8443?mode=gun&security=reality&encryption=none&pbk=3DYkxUg9fBA6cONioJOPrsklcMQEImEsurR6air4swo&fp=chrome&type=grpc&serviceName=TunService&sni=cdn.steamstatic.com#[",
-  "vless://e5d73666-1ac5-49fc-8e4d-5c8cad769588@176.222.53.236:8445?mode=gun&security=reality&encryption=none&authority=&pbk=_UazRMiBq9RqMaVrHeLsvUuoBkGFo9Gm-A4ivuZ6ZS8&fp=safari&type=grpc&serviceName=Google&sni=hetzner.com&sid=6ba85179e30d4fc2#[",
   "vless://1fac5e18-2ca8-4626-c299-1f3f21c6b55e@k2.cloud--vpn.site:443?encryption=none&type=ws&security=tls&path=%2F&host=c12.com&sni=ssl.fastly.com&alpn=h2&fp=firefox&insecure=0&allowInsecure=0#[",
   "vless://d342d11e-d424-4583-b36e-524ab1f0afa4@162.159.197.1:443?encryption=none&security=tls&sni=cdn8848.776676.xyz&allowinsecure=0&type=ws&host=cdn8848.776676.xyz&path=%2Fproduct%3Fed%3D2560fp%3Dchrome#[",
   "ss://YWVzLTEyOC1nY206c2hhZG93c29ja3M=@156.146.38.170:443#[",
@@ -10,7 +8,9 @@
   "vless://69ac162b-1643-4acb-9f49-09d8b0fad609@milan.adaspoloandco.com:8443?encryption=none&security=tls&sni=milan.adaspoloandco.com&allowinsecure=0&type=ws&host=milan.adaspoloandco.com&path=%2FRoBeRt#[",
   "ss://YWVzLTEyOC1nY206c2hhZG93c29ja3M=@37.19.198.160:443#[",
   "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTo3ZTczMWVjMy1mOGUxLTQzZjYtOTJjZi0zOTc4ZDE0NzA1YzQ=@r3mrcg001286ek2.cybervena.com:50099#[",
-  null,
+  "vless://b0c51c20-1557-4f1f-9eaa-6e4c844a04ca@72.56.111.205:1443?security=reality&encryption=none&pbk=ODyAfL7Ie0jmStqz0l2pTq9acdVcmK650m4r1b-R_lM&headerType=none&fp=safari&spx=%2Fg3jUeV8A37srxMj&type=tcp&flow=xtls-rprx-vision&sni=www.google.com&sid=1c343b1444c190#[",
+  "vless://92288261-42ad-440c-811b-dfe5cb5b826d@2.26.3.164:443?security=reality&encryption=none&pbk=SARDrN_d46PsugT2k5ILoQAJqaA1eCOZhe1BjKMonj8&headerType=none&fp=safari&type=tcp&flow=xtls-rprx-vision&sni=mzone.fi.3cloudhost.com#[",
+  "vless://ce8f5ca7-c2c4-43c4-9186-8cb96257c811@germany.ark-cloudservice.ir:37356?security=none&encryption=mlkem768x25519plus.native.0rtt.Zy8tFuu6oJOBsIKH_iJuL6qU1Zm7HbYYAZ86mNBayHg&headerType=none&type=tcp#[🇷🇦]t.me/ConfigsHub",
   null,
   null,
   null,
