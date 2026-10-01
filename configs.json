@@ -1,6 +1,6 @@
 [
-  "vless://8995976a-1c81-4b44-a414-d3bc71058a21@104.21.0.115:8880?type=ws&host=muddy-queen-cdda.181-cf9.workers.dev#[",
-  "vless://3d0a7290-6c7f-455d-8b05-da7be0746289@178.105.218.75:8443?security=none&encryption=none&host=www.google.com&headerType=http&type=tcp#[",
+  "ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpyNUQ2WU9TclQ2a0M3NnJv@20.123.34.66:443?type=tcp#[",
+  "vless://64c2bc5c-7534-4359-9b1e-e1dce5a380cd@k2.cloud--vpn.site:443?path=%2F&security=tls&alpn=h2&encryption=none&insecure=0&host=c12.com&fp=firefox&type=ws&allowInsecure=0&sni=ssl.fastly.com#[",
   null,
   null,
   null,
