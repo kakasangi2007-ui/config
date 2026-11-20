@@ -1,7 +1,4 @@
 [
-  "ss://YWVzLTI1Ni1nY206QmVhVWY5YzBBRVdINDBQdQ==@154.36.158.197:8388#[",
-  "ss://YWVzLTI1Ni1nY206a0RXdlhZWm9UQmNHa0M0@51.222.136.236:8882#[",
-  "ss://YWVzLTI1Ni1nY206WlJwZ2FCZUd4dEVOSVhndmhwa1pCS3o5R25XUlMyZFljeDlPK2EyaXdOND0=@149.88.106.74:19999#[",
   "vless://deb79775-35dc-4376-adf0-5b4fd26c691c@104.253.74.39:8080?security=reality&encryption=none&pbk=NJrlB9wz9ctlwMOIK8Jp7Ml25j77QlFOjpha1lEktkg&headerType=none&fp=chrome&type=tcp&flow=xtls-rprx-vision&sni=yahoo.com&sid=4a9acf81b8773e1e#[",
   "vless://0ce122a3-1c91-4cf5-a2cc-67f25e8cb56f@185.32.6.61:443?security=reality&encryption=none&pbk=xy8AHr_xZCNqFOuLq_t2fe4oLlrv5iu38uCQ1hUJ40w&headerType=none&fp=firefox&type=tcp&flow=xtls-rprx-vision&sni=dropbox.com&sid=954c99065465428d#[",
   "trojan://MITIVPN@openai.com:443?path=%2F---%40MiTiVPN%2F---%40MiTiVPN%2F---%40MiTiVPN%2F---%40MiTiVPN%2F---%40MiTiVPN%3DU-S-a&security=tls&alpn=h2%2Chttp%2F1.1&insecure=0&host=my-usjca-ohl.App-CloUd.IR&fp=chrome&type=ws&allowInsecure=0&sni=UsAba-bUbks.App-CloUd.IR#[",
@@ -16,6 +13,9 @@
   "vless://5d0a0ac1-77c7-4523-9568-3e0d9b5b4434@xray2-direct-mci1-fs-ce.freesocks.work:443?encryption=none&flow=xtls-rprx-vision&type=tcp&security=reality&sni=dl.google.com&fp=chrome&pbk=7j3hmlHrEDk3Kjx-dFG3E3jf0c6PZF45trIPFsuKWmI#[",
   "vless://a24cd01e-e3d6-4b33-b3c4-69c2bdaa8a68@shop.ritmexo.ir:53231?security=none&encryption=mlkem768x25519plus.native.0rtt.BbeJhyjcSyRE6hWGA8ZXSkX-9JDpQ0KvWJCyjjiXgwM&host=shop.ritmexo.ir&headerType=none&type=tcp#[",
   "ss://YWVzLTI1Ni1nY206WlJwZ2FCZUd4dEVOSVhndmhwa1pCS3o5R25XUlMyZFljeDlPK2EyaXdOND0@185.176.204.18:19999#[",
+  "vless://e07a6d05-f665-4811-91f0-9b3dc1094e4d@48.102.163.136:8443?encryption=none&flow=xtls-rprx-vision&fp=edge&pbk=yr_opKG6DGTppNDXkk-DhGSYJZXbb9o-caexk2FZO38&security=reality&sid=8f3c6e2a1b5d4f09&sni=tradingview.com&type=tcp#[",
+  "vless://3af2930e-8ea0-4b50-98b0-499df9b269dc@www.pexqelo.ir:443?security=reality&encryption=none&pbk=EMMr7Eqwy3wpgbatnOaAmym5Tm4nXyJlC83iVvCadmk&headerType=none&fp=ios&type=tcp&flow=xtls-rprx-vision&sni=opensuse.org&sid=f3f00787a8b3f471#[",
+  null,
   null,
   null,
   null,
