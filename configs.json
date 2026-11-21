@@ -1,5 +1,4 @@
 [
-  "ss://Y2hhY2hhMjAtcG9seTEzMDU6azFkQk9tT0I0b3FpN1VtcDM3YTFiUQ@82.38.31.220:8080#[",
   "vless://921b248d-f094-4a59-a794-cdbab080c26a@199.232.78.159:443?pcs=CD6E838B9BFE31CAB8B3D5C858B0D6223FE84ECE236C1FDB281BE93C302E1E6E&path=%2F&security=tls&encryption=none&insecure=0&host=canoijji.global.ssl.fastly.net.&type=ws&allowInsecure=0&sni=community.fastly.steamstatic.com#[",
   "vless://055a1ce8-2a16-4a0d-a2c2-22826c9b2413@47.253.226.114:443?flow=xtls-rprx-vision&fp=chrome&host=%2F%3Ftelegram--marambashi--marambashi&pbk=Svl81isn16RPAFnjtmYw7A6TPnsEPLHuYYaJht65Rzc&security=reality&sni=www.cloudflare.com&type=tcp#[",
   "vless://69279e79-7938-4e75-8560-705f3d056ade@167.17.183.99:443?path=%2Fstream%2FDEVCOP%2F705f3d056ade%2Floc-0%3Fed%3D2048&security=tls&encryption=none&insecure=0&host=denot-8up7.edge-mil-jgpthc.workers.dev&fp=ios&type=ws&allowInsecure=0&sni=denot-8up7.edge-mil-jgpthc.workers.dev#[",
@@ -13,7 +12,8 @@
   "trojan://jcTG9WSWMJAmR4rv10xpww@199.232.78.159:443?type=ws&security=tls&path=%2FTELEGRAM-%40NUFiLTER-TELEGRAM-%40NUFiLTER-TELEGRAM-%40NUFiLTER-TELEGRAM-%40NUFiLTER-TELEGRAM-%40NUFiLTER-TELEGRAM-%40NUFiLTER-TELEGRAM-%40NUFiLTER-TELEGRAM-%40NUFiLTER&host=copy_az_channel_NUFiLTER_10i.global.ssl.fastly.net.&sni=cdn.akamai.steamstatic.com&pinSHA256=cd6e838b9bfe31cab8b3d5c858b0d6223fe84ece236c1fdb281be93c302e1e6e&pcs=cd6e838b9bfe31cab8b3d5c858b0d6223fe84ece236c1fdb281be93c302e1e6e#[",
   "vmess://eyJhZGQiOiI1Ny4xMjkuMTMyLjIyMyIsImFpZCI6IjAiLCJhbHBuIjoiIiwiZnAiOiIiLCJob3N0IjoiIiwiaWQiOiJhMjVjYmYxMS0yOTA4LTRhMWItYTNhOC05YTU3MTc3N2RjYTMiLCJpbnNlY3VyZSI6IjAiLCJuZXQiOiJ3cyIsInBhdGgiOiIvdm1lc3MvIiwicG9ydCI6IjgwIiwicHMiOiJb8J+HrPCfh6dddC5tZS9Db25maWdzSHViIiwic2N5IjoiYXV0byIsInNuaSI6IiIsInRscyI6IiIsInR5cGUiOiJub25lIiwidiI6IjIifQ==",
   "vless://9d464bfa-c8b2-4a4f-9bf7-9ec31b339b67@varzesh.com.tiket.paxaro.ir:4433?encryption=none&headerType=http&host=play.google.com&path=/&security=none&type=tcp#[",
-  null,
+  "vless://1043634e-8d9d-4736-83fa-f14ddc9d464c@188.114.97.6:443?path=id-amz&security=tls&encryption=none&insecure=0&host=dfsuporte.garena.com.ex33r.eu.cc&type=ws&allowInsecure=0&sni=dfsuporte.garena.com.ex33r.eu.cc#[",
+  "vless://48ff2b70-e180-582f-8866-d9a2edeed5f5@51.158.206.86:23576?encryption=none&flow=xtls-rprx-vision&security=reality&sni=fuck.rkn&pbk=1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s&sid=01&type=tcp&headerType=none&host=/?Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET#[",
   null,
   null,
   null,
